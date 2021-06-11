@@ -1,6 +1,6 @@
 import React, {Component} from './node_modules/react'
 
-let reverse = []
+let reverse = [] 
 
 export default class Coding extends Component {
     constructor(props){
