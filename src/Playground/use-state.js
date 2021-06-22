@@ -9,7 +9,7 @@ const App = ()=>{
         })
     }
 
-    console.log('functional component rerendered')
+    console.log('functional component rendered')
     return(
         <Fragment>
             Count : {count}
