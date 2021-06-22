@@ -3,7 +3,7 @@ import React, {useState, Fragment} from 'react'
 
 const initialstate = ()=>{
     console.log('initial state called')
-    return {count:0,limit:20}
+    return {count:0,limit:10}
 }
 
 const App = ()=>{
@@ -12,6 +12,7 @@ const App = ()=>{
     const limit = state.limit
 
     function increment(){
+        if(count<limit)
         setState((prevState)=>{
             return {...prevState, count:prevState.count+1}
         })
