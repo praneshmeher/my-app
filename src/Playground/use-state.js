@@ -1,7 +1,13 @@
 import React, {useState, Fragment} from 'react'
 
+
+const initialstate = ()=>{
+    console.log('initial state called')
+    return 0
+}
+
 const App = ()=>{
-    const[count, setCount] = useState(0)
+    const[count, setCount] = useState(()=>initialstate())
 
     function increment(){
         setCount((prevCount)=>{
