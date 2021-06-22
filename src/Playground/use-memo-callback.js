@@ -1,32 +1,40 @@
 import React, {useState, useCallback, useMemo, Fragment, useEffect} from 'react'
 
 const App = ()=>{
-
+    const[count, setCount] = useState(0)
     const[callBackCount, setCallBackCount] = useState(0)
     const[memoCount, setMemoCount] =useState(0)
 
-    const memoFunction = ()=>{
-        console.log('memo called', memoCount)
-    }
-
-    useMemo(memoFunction, [memoCount])
-
     const callBackFunction = useCallback(()=>{
-        console.log('callback called', callBackCount)
+        console.log('callback called')
+        for (let i = 0; i < 1000000000; i++) { }
         return callBackCount
     }, [callBackCount])
 
-    console.log('parent rendered')
+    const memoizedvalue = useMemo(()=>{
+        console.log('memo called')
+        for (let i = 0; i < 1000000000; i++) { }
+        return memoCount
+    }, [memoCount])
+
     return(
         <Fragment>
             <ChildComponent action={callBackFunction} />
             <div>
-                <button onClick={()=>setCallBackCount(callBackCount+1)}>
+                {callBackCount} <br/>
+                <button onClick={()=>setCallBackCount(prevCallBackCount=>prevCallBackCount+1)}>
                     Increment callback count
                 </button>
             </div>
             <div>
-                <button onClick={()=>setMemoCount(memoCount+1)}>
+                {memoizedvalue} <br/>
+                <button onClick={()=>setMemoCount(prevMemoCount=>prevMemoCount+1)}>
+                    Increment memo count
+                </button>
+            </div>
+            <div>
+                {count} <br/>
+                <button onClick={()=>setCount(prevCount=>prevCount+1)}>
                     Increment memo count
                 </button>
             </div>
@@ -38,12 +46,10 @@ const ChildComponent = ({action})=>{
     const[value, setValue] = useState(0)
 
     useEffect(()=>{
-        console.log('useeffect called')
         let val = action()
         setValue(val)
     }, [action])
 
-    console.log('child rendered')
     return(
         <Fragment>
             Child : {value}
