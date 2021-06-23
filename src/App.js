@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Hooks from './Playground/uncontrolled'
+import Hooks from './Playground/pure'
 
 function App() {
   return (
