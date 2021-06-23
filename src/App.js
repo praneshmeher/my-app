@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Hooks from './Playground/use-memo'
+import Hooks from './Playground/use-effect'
 
 function App() {
   return (
