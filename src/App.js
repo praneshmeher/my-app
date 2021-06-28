@@ -1,5 +1,5 @@
 import React from 'react'
-import Hooks from './Playground/use-context-func'
+import Hooks from './Playground/react-lazy'
 import { useState } from 'react';
 
 export const ThemeContext = React.createContext()
@@ -13,10 +13,12 @@ function App() {
   
   return (
     <div className="App">
-      <ThemeContext.Provider value={theme}>
+      {/* <ThemeContext.Provider value={theme}>
         <button onClick={()=>toggle()}>Change Theme</button>
         <Hooks />
-      </ThemeContext.Provider>
+      </ThemeContext.Provider> */}
+
+      <Hooks/>
     </div>
   );
 }
