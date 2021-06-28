@@ -1,5 +1,5 @@
 import React from 'react'
-import Hooks from './Playground/react-lazy'
+import Hooks from './Playground/react-lazy-suspense'
 import { useState } from 'react';
 
 export const ThemeContext = React.createContext()
