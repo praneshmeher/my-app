@@ -1,5 +1,5 @@
 import React from 'react'
-import Hooks from './Playground/children-prop'
+import DemoComponent from './Playground/hoc-loading'
 import { useState } from 'react';
 
 export const ThemeContext = React.createContext()
@@ -18,7 +18,7 @@ function App() {
         <Hooks />
       </ThemeContext.Provider> */}
 
-      <Hooks/>
+      <DemoComponent loading={false} list={['Pranesh, Ganesh']}/>
     </div>
   );
 }
