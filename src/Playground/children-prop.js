@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-const App = ()=>{
+const Parent = ()=>{
     return(
         <Child>
             <div>Component 1</div>
@@ -18,4 +18,4 @@ const Child = (props)=>{
     )
 }
 
-export default App
+export default Parent
