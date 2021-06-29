@@ -1,5 +1,5 @@
 import React from 'react'
-import DemoComponent from './Playground/hoc-loading'
+import DemoComponent from './Playground/render-props'
 import { useState } from 'react';
 
 export const ThemeContext = React.createContext()
