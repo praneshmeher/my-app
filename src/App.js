@@ -1,5 +1,5 @@
 import React from 'react'
-import DemoComponent from './Playground/hoc-willmount'
+import DemoComponent from './Playground/use-willmount'
 import { useState } from 'react';
 
 export const ThemeContext = React.createContext()
@@ -20,8 +20,9 @@ function App() {
 
       {/* <DemoComponent loading={false} list={['Pranesh, Ganesh']}/> */}
 
-      <DemoComponent func={()=>{console.log('willmount')}} />
+      {/* <DemoComponent func={()=>{console.log('willmount')}} /> */}
 
+      <DemoComponent/>
     </div>
   );
 }
