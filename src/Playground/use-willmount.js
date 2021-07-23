@@ -5,16 +5,21 @@ const useComponentWillMount = (func)=>{
     if(ref.current){
         func()
     }
-    useEffect(()=>{
-        ref.current=false
-    },[])
+    useComponentDidMount(()=>{
+        ref.current = false
+    })
+}
+
+const useComponentDidMount = (func)=>{
+    useEffect(func,[])
 }
 
 const App = ()=>{
     const[count, setCount]=useState(0)
 
+    useComponentDidMount(()=>{console.log("didmount")})
     useComponentWillMount(()=>{console.log("willmount")})
-    
+
     return(
         <Fragment>
             <div>{count}</div>

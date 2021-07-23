@@ -1,5 +1,5 @@
 import React from 'react'
-import DemoComponent from './Playground/class-component'
+import DemoComponent from './Playground/use-willmount'
 import { useState } from 'react';
 
 export const ThemeContext = React.createContext()
