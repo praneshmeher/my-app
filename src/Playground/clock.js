@@ -8,6 +8,7 @@ const App = ()=>{
             setDate(new Date().toLocaleTimeString())
         },[date])
     },[])
+    
     return(
         <Fragment>
             {date}
