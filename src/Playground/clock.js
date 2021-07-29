@@ -6,8 +6,8 @@ const App = ()=>{
     useEffect(()=>{
         setInterval(()=>{
             setDate(new Date().toLocaleTimeString())
-        },[date])
-    },[])
+        },1000)
+    },[date])
     
     return(
         <Fragment>
